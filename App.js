@@ -7,24 +7,8 @@
  */
 
 import React from 'react';
-import styled from 'styled-components';
+import Container from './components/Container';
 
-const Title = styled.Text`
-  font-size: 25px;
-  font-family: monospace;
-  margin: 20px 0;
-  font-weight: bold;
-`;
-
-const Container = styled.View`
-  flex: 1;
-  align-items: center;
-`;
-
-const App = () => (
-  <Container>
-    <Title>Covid India</Title>
-  </Container>
-);
+const App = () => <Container />;
 
 export default App;
