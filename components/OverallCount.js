@@ -21,10 +21,10 @@ const StyledOverallCount = styled(OverallCount)`
   padding-top: 10;
   padding-bottom: 10;
   border-radius: 2;
-  margin-left: 10;
-  margin-right: 10;
-  margin-bottom: 10;
-  margin-top: 10;
+  margin-left: 12;
+  margin-right: 12;
+  margin-bottom: 12;
+  margin-top: 12;
   align-items: center;
   background-color: ${({rgba}) =>
     `rgba(${rgba[0]}, ${rgba[1]}, ${rgba[2]}, 0.2)`};
