@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View} from 'react-native';
+import {Text, ScrollView} from 'react-native';
 import Title from './Title';
 import Overall from './Overall';
+import States from './States';
 
 const STATES_API = 'https://api.covid19india.org/v2/state_district_wise.json';
 
@@ -15,10 +16,11 @@ const Container = () => {
   }, []);
 
   return data ? (
-    <View>
+    <ScrollView>
       <Title text="Covid India" />
       <Overall data={data} />
-    </View>
+      <States states={data} />
+    </ScrollView>
   ) : (
     <Text>Loading</Text>
   );
