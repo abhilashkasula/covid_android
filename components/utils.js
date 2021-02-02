@@ -13,4 +13,7 @@ const getStateCount = (districts) =>
     {c: 0, cd: 0, a: 0, ad: 0, d: 0, dd: 0, r: 0, rd: 0},
   );
 
-export {getStateCount};
+const filterStates = (states, searchText) =>
+  states.filter(({state}) => state.match(new RegExp(searchText, 'i')));
+
+export {getStateCount, filterStates};
