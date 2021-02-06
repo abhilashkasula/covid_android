@@ -26,7 +26,8 @@ const StyledState = styled(State)`
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: rgba(108, 117, 125, 0.09);
+  background-color: ${({isClicked}) =>
+    isClicked ? 'rgba(108, 117, 125, 0.2)' : 'rgba(108, 117, 125, 0.09)'};
   width: 357px;
   border-radius: 3px;
   padding: 13px 27px;

@@ -8,7 +8,11 @@ const StateContainer = ({style, state}) => {
   const [isClicked, setClick] = useState(false);
   return (
     <View style={style}>
-      <State state={state} onClick={() => setClick((clicked) => !clicked)} />
+      <State
+        state={state}
+        onClick={() => setClick((clicked) => !clicked)}
+        isClicked={isClicked}
+      />
       {isClicked && <Districts districts={state.districtData} />}
     </View>
   );
