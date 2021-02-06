@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {Text, ScrollView} from 'react-native';
+import {Image, ScrollView, View} from 'react-native';
 import Title from './Title';
 import Overall from './Overall';
 import States from './States';
 import Search from './Search';
 import {filterStates} from './utils';
+import Loading from './Loading';
 
 const STATES_API = 'https://api.covid19india.org/v2/state_district_wise.json';
 
@@ -26,7 +27,7 @@ const Container = () => {
       <States states={filterStates(data, searchText)} />
     </ScrollView>
   ) : (
-    <Text>Loading</Text>
+    <Loading />
   );
 };
 
