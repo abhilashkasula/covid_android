@@ -13,10 +13,13 @@ const Container = () => {
   const [data, setData] = useState(null);
   const [searchText, setSearchText] = useState('');
 
-  useEffect(() => {
+  const updateLatestData = () =>
     fetch(STATES_API)
       .then((response) => response.json())
-      .then((json) => setData(json));
+      .then((json) => console.log(json) || setData(json));
+
+  useEffect(() => {
+    setInterval(updateLatestData, 5000);
   }, []);
 
   return data ? (
