@@ -16,4 +16,9 @@ const getStateCount = (districts) =>
 const filterStates = (states, searchText) =>
   states.filter(({state}) => state.match(new RegExp(searchText, 'i')));
 
-export {getStateCount, filterStates};
+const getDelta = (n) =>
+  n > 0 ? `↑${Math.abs(n)}` : n < 0 ? `↓${Math.abs(n)}` : '';
+
+const descend = (a, b) => (a > b ? -1 : a < b ? 1 : 0);
+
+export {getStateCount, filterStates, getDelta, descend};

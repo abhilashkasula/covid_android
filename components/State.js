@@ -1,17 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View} from 'react-native';
 import styled from 'styled-components';
-import {getStateCount} from './utils';
+import {getStateCount, getDelta} from './utils';
 import StateCases from './StateCases';
 import StateName from './StateName';
+import Districts from './Districts';
 
-const getDelta = (n) =>
-  n > 0 ? `↑${Math.abs(n)}` : n < 0 ? `↓${Math.abs(n)}` : '';
-
-const State = ({style, state}) => {
+const State = ({style, state, onClick}) => {
   const {c, cd, a, ad, d, dd, r, rd} = getStateCount(state.districtData);
   return (
-    <View style={style}>
+    <View style={style} onStartShouldSetResponder={onClick}>
       <StateName name={state.state} />
       <View>
         <StateCases delta={getDelta(cd)} cases={c} confirmed />

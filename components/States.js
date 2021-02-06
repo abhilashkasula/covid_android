@@ -1,20 +1,20 @@
 import React from 'react';
 import {View} from 'react-native';
 import styled from 'styled-components';
-import State from './State';
-import {getStateCount} from './utils';
+import StateContainer from './StateContainer';
+import {getStateCount, descend} from './utils';
 
 const sortOnConfirmedCases = (a, b) => {
   const {c: confirmedA} = getStateCount(a.districtData);
   const {c: confirmedB} = getStateCount(b.districtData);
-  return confirmedA > confirmedB ? -1 : confirmedA < confirmedB ? 1 : 0;
+  return descend(confirmedA, confirmedB);
 };
 
 const States = ({style, states}) => {
   return (
     <View style={style}>
       {states.sort(sortOnConfirmedCases).map((state) => {
-        return <State key={state.statecode} state={state} />;
+        return <StateContainer key={state.statecode} state={state} />;
       })}
     </View>
   );
