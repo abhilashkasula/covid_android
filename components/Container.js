@@ -16,7 +16,7 @@ const Container = () => {
   const updateLatestData = () =>
     fetch(STATES_API)
       .then((response) => response.json())
-      .then((json) => console.log(json) || setData(json));
+      .then((json) => setData(json));
 
   useEffect(() => {
     setInterval(updateLatestData, 5000);
